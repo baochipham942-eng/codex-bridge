@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.runs/
+logs/
+bridge.policy.local.json
+bridge.policy.json
+*.pid
+*.log
+*.db
+*.db-journal
+.env
+.DS_Store

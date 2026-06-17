@@ -1,0 +1,33 @@
+{
+  "allowedProjectRoots": [
+    "~/Projects"
+  ],
+  "denyGlobs": [
+    "**/.env",
+    "**/.env.*",
+    "**/*.pem",
+    "**/*.key",
+    "**/*.p12",
+    "**/*.pfx",
+    "**/.npmrc",
+    "**/.netrc",
+    "**/.ssh/**",
+    "**/id_rsa",
+    "**/id_ed25519"
+  ],
+  "shell": {
+    "enabled": true,
+    "denyPatterns": [
+      "sudo",
+      "rm\\s+-rf\\s+/",
+      "rm\\s+-rf\\s+~",
+      "rm\\s+-rf\\s+\\$HOME",
+      "chmod\\s+-R",
+      "chown\\s+-R",
+      "security\\s+find-",
+      "launchctl\\s+bootout\\s+system",
+      "curl\\s+[^|;]*\\|\\s*(sh|bash|zsh)",
+      "wget\\s+[^|;]*\\|\\s*(sh|bash|zsh)"
+    ]
+  }
+}

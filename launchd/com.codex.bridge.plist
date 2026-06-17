@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.codex.bridge</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-c</string>
+    <string>cd __HOME__/.codex-bridge/bridge-runtime &amp;&amp; exec node dist/index.js --http 3848</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>HOME</key>
+    <string>__HOME__</string>
+    <key>CODEX_BRIDGE_LOG_DIR</key>
+    <string>__HOME__/.codex-bridge/logs</string>
+    <key>CODEX_BRIDGE_POLICY_PATH</key>
+    <string>__HOME__/.codex-bridge/bridge-runtime/bridge.policy.local.json</string>
+    <!-- Optional: uncomment and set to enable HTTP token auth for /mcp -->
+    <!-- <key>CODEX_BRIDGE_AUTH_TOKEN</key> -->
+    <!-- <string>replace-with-a-random-token</string> -->
+  </dict>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>StandardOutPath</key>
+  <string>__HOME__/.codex-bridge/logs/bridge.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>__HOME__/.codex-bridge/logs/bridge.err.log</string>
+</dict>
+</plist>
