@@ -2,7 +2,13 @@
 
 Codex Bridge lets ChatGPT Web use a small set of local development tools through MCP: inspect a project, search and read files, patch or write safe files, run tests, inspect diffs, manage a tracked change session, and check local processes.
 
-For guided configuration, open this file in a browser:
+For guided configuration, open the hosted setup guide:
+
+```text
+https://baochipham942-eng.github.io/codex-bridge/
+```
+
+Or open this local file in a browser after cloning:
 
 ```text
 docs/setup.html
