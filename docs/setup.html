@@ -103,31 +103,6 @@
     }
     p { margin: 8px 0; }
     .muted { color: var(--muted); }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 16px;
-    }
-    .card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #fff;
-      padding: 16px;
-    }
-    .check {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--brand-2);
-      color: #fff;
-      font-size: 14px;
-      font-weight: 800;
-      margin-right: 8px;
-    }
     .steps {
       display: grid;
       gap: 18px;
@@ -328,7 +303,7 @@
       padding: 9px 13px;
     }
     @media (max-width: 820px) {
-      .hero, .two-col, .grid { grid-template-columns: 1fr; }
+      .hero, .two-col { grid-template-columns: 1fr; }
       .section, .hero { padding: 20px; }
       h1 { font-size: 28px; }
       .step { grid-template-columns: 1fr; }
@@ -368,32 +343,14 @@
           <line x1="178" y1="100" x2="228" y2="100" stroke="#1463ff" stroke-width="3" marker-end="url(#arrow)"></line>
           <line x1="388" y1="100" x2="438" y2="100" stroke="#1463ff" stroke-width="3" marker-end="url(#arrow)"></line>
           <rect x="70" y="230" width="480" height="62" rx="10" fill="#172235"></rect>
-          <text x="310" y="256" text-anchor="middle" font-size="16" font-weight="700" fill="#eef4ff">最终复制给 ChatGPT 的地址</text>
-          <text x="310" y="280" text-anchor="middle" font-size="14" fill="#b8c7da">https://xxxx.trycloudflare.com/mcp</text>
+          <text x="310" y="256" text-anchor="middle" font-size="16" font-weight="700" fill="#eef4ff">隧道脚本会生成 MCP URL</text>
+          <text x="310" y="280" text-anchor="middle" font-size="14" fill="#b8c7da">以命令窗口里的实际输出为准</text>
         </svg>
       </div>
     </section>
 
     <section class="section">
-      <h2>开始前确认三件事</h2>
-      <div class="grid">
-        <div class="card">
-          <h3><span class="check">1</span>Mac 或 Windows</h3>
-          <p class="muted">MacBook M 芯片、Mac Intel 芯片、Windows 电脑都可以。Mac 用 <code>.sh</code> 脚本，Windows 用 <code>.ps1</code> 脚本。</p>
-        </div>
-        <div class="card">
-          <h3><span class="check">2</span>一个项目文件夹</h3>
-          <p class="muted">Mac 常用 <code>~/Projects</code>，Windows 常用 <code>%USERPROFILE%\Projects</code>。只有这个文件夹里的代码会开放给 ChatGPT 工具读取。</p>
-        </div>
-        <div class="card">
-          <h3><span class="check">3</span>ChatGPT 有连接器入口</h3>
-          <p class="muted">如果看不到创建自定义连接器，通常需要先打开 Developer mode；公司工作区可能需要先申请连接器权限。</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>一次性安装</h2>
+      <h2>首次安装</h2>
       <p class="muted">只需要做一次。以后每天使用时，从“日常启动”开始。</p>
       <div class="steps">
         <div class="step">
@@ -485,7 +442,7 @@
             </div>
             <p>成功时会看到：</p>
             <div class="visual">
-              <div class="terminal">[OK] Cloudflare tunnel started.<br>MCP URL: https://example.trycloudflare.com/mcp<br>Use this URL in ChatGPT Web.</div>
+              <div class="terminal">[OK] Cloudflare tunnel started.<br>MCP URL: 复制这里显示的实际地址<br>Use this URL in ChatGPT Web.</div>
             </div>
             <div class="warn">
               每次重新启动隧道，<code>trycloudflare.com</code> 地址可能会变。地址变了以后，需要回 ChatGPT 连接器里更新 URL。
@@ -504,7 +461,7 @@
             <tr><th>表单项</th><th>填写内容</th></tr>
             <tr><td>名称</td><td>Codex Bridge</td></tr>
             <tr><td>描述</td><td>Connect ChatGPT to local code, tests, and diffs through MCP.</td></tr>
-            <tr><td>服务器 URL</td><td>填入脚本输出的 <code>https://xxxx.trycloudflare.com/mcp</code></td></tr>
+            <tr><td>服务器 URL</td><td>填入 <strong>启动公网隧道</strong> 那一步输出的 <strong>MCP URL</strong></td></tr>
             <tr><td>身份验证</td><td>第一次使用选 <strong>无 / No authentication</strong></td></tr>
           </table>
           <div class="danger">
@@ -514,7 +471,7 @@
         <div class="fake-ui" aria-label="ChatGPT 配置示意图">
           <div class="fake-row"><span class="fake-chip">Create connector</span><span class="fake-chip">Server URL</span></div>
           <div class="fake-row"><div class="fake-input">Codex Bridge</div></div>
-          <div class="fake-row"><div class="fake-input">https://example.trycloudflare.com/mcp</div></div>
+          <div class="fake-row"><div class="fake-input">粘贴命令窗口输出的 MCP URL</div></div>
           <div class="fake-row"><span class="fake-chip">No authentication</span><span class="fake-chip">Create</span></div>
         </div>
       </div>
