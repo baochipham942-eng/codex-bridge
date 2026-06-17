@@ -5,7 +5,7 @@ Codex Bridge lets ChatGPT Web use a small set of local development tools through
 For guided configuration, open the hosted setup guide:
 
 ```text
-https://baochipham942-eng.github.io/codex-bridge/
+https://codex-bridge.vercel.app/
 ```
 
 Or open this local file in a browser after cloning:
